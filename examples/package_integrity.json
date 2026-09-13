@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-09-13T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "package_integrity_checks"
+  ],
+  "scope": "Dados sintéticos de demonstração; nenhum segredo do usuário.",
+  "summary": {
+    "counts": {
+      "pass": 4,
+      "fail": 0,
+      "warning": 3
+    },
+    "total": 7,
+    "score": 100.0,
+    "coverage_percent": 57.14,
+    "weighted_coverage_percent": 74.07,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído",
+    "domains": {
+      "package_integrity": {
+        "counts": {
+          "pass": 4,
+          "fail": 0,
+          "warning": 3
+        },
+        "total": 7,
+        "score": 100.0,
+        "coverage_percent": 57.14,
+        "weighted_coverage_percent": 74.07,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      }
+    },
+    "domain_balanced_score": 100.0,
+    "critical_failures": 0,
+    "package_coverage": {
+      "total_installed": 2,
+      "selected": 2,
+      "examined": 2,
+      "verification_attempts": 1,
+      "cryptographically_verified": 1,
+      "valid_signatures": 1,
+      "invalid_signatures": 0,
+      "trusted_valid_signatures": 1,
+      "inconclusive": 1,
+      "not_verified": 1,
+      "coverage_percent": 50.0,
+      "selection_limit": 100,
+      "scope": "artefatos no cache; não verifica bytes instalados"
+    }
+  },
+  "context": null,
+  "selection": {
+    "preset": "full",
+    "omitted": []
+  },
+  "results": [
+    {
+      "id": "package_integrity.policy.global",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.policy.local_file",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.policy.repo.core",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.foreign.foreign",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.signature.bitcoin",
+      "name": "Assinatura do pacote e confiança",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinatura criptográfica válida e confiança suficiente no keyring local.",
+      "recommendation": "Use artefatos assinados por signatários confiáveis; revise o keyring local e sua atualização por procedimento separado.",
+      "evidence": {
+        "package": "bitcoin",
+        "version": "1.0-1",
+        "scope": "arquivo no cache; não é integridade dos arquivos instalados"
+      },
+      "reason": null
+    },
+    {
+      "id": "package_integrity.signature.foreign",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.scope",
+      "name": "Limites de integridade local",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Assinaturas do cache não comprovam os bytes atualmente instalados nem a procedência histórica. Bases/keyring podem estar desatualizados; sem consulta de revogação online. Confiança só é avaliada para signatários verificáveis."
+    }
+  ],
+  "example": true
+}

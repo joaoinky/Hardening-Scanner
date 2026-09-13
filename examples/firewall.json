@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-09-13T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "firewall_checks"
+  ],
+  "scope": "Dados sintéticos de demonstração; nenhum segredo do usuário.",
+  "summary": {
+    "counts": {
+      "pass": 3,
+      "fail": 2,
+      "warning": 0
+    },
+    "total": 5,
+    "score": 60.0,
+    "coverage_percent": 100.0,
+    "weighted_coverage_percent": 100.0,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído",
+    "domains": {
+      "firewall": {
+        "counts": {
+          "pass": 3,
+          "fail": 2,
+          "warning": 0
+        },
+        "total": 5,
+        "score": 60.0,
+        "coverage_percent": 100.0,
+        "weighted_coverage_percent": 100.0,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      }
+    },
+    "domain_balanced_score": 60.0,
+    "critical_failures": 0,
+    "package_coverage": {
+      "total_installed": null,
+      "selected": 0,
+      "examined": 0,
+      "verification_attempts": 0,
+      "cryptographically_verified": 0,
+      "valid_signatures": 0,
+      "invalid_signatures": 0,
+      "trusted_valid_signatures": 0,
+      "inconclusive": 0,
+      "not_verified": null,
+      "coverage_percent": null,
+      "state": "não executado"
+    }
+  },
+  "context": null,
+  "selection": {
+    "preset": "full",
+    "omitted": []
+  },
+  "results": [
+    {
+      "id": "firewall.ip.default",
+      "name": "Política de entrada",
+      "status": "pass",
+      "severity": "high",
+      "description": "Política de descarte/regra terminal ou exceção explícita identificada.",
+      "recommendation": "Prefira policy drop ou regra terminal de descarte/reject; revise as exceções explícitas.",
+      "evidence": {
+        "family": "ip",
+        "chain_policy": "drop",
+        "fallback_verdict": "accept",
+        "justified_accept": false
+      },
+      "reason": null
+    },
+    {
+      "id": "firewall.ip.allow.0",
+      "name": "Permissão de entrada versus whitelist",
+      "status": "fail",
+      "severity": "high",
+      "description": "Regra permite tráfego além da whitelist, mesmo que não haja listener agora.",
+      "recommendation": "Restrinja protocolo, porta e destino ao necessário.",
+      "evidence": {
+        "family": "ip",
+        "rule_index": 0
+      },
+      "reason": null
+    },
+    {
+      "id": "firewall.ip.socket.tcp.127.0.0.1.9050",
+      "name": "Cobertura do socket",
+      "status": "pass",
+      "severity": "high",
+      "description": "Socket bloqueado ou permitido explicitamente conforme a whitelist no modelo input.",
+      "recommendation": "Revise o bind e a regra de entrada correspondente.",
+      "evidence": {
+        "protocol": "tcp",
+        "address": "127.0.0.1",
+        "port": 9050,
+        "verdict": "accept",
+        "source": "rule"
+      },
+      "reason": null
+    },
+    {
+      "id": "firewall.ip6.default",
+      "name": "Política de entrada",
+      "status": "pass",
+      "severity": "high",
+      "description": "Política de descarte/regra terminal ou exceção explícita identificada.",
+      "recommendation": "Prefira policy drop ou regra terminal de descarte/reject; revise as exceções explícitas.",
+      "evidence": {
+        "family": "ip6",
+        "chain_policy": "drop",
+        "fallback_verdict": "accept",
+        "justified_accept": false
+      },
+      "reason": null
+    },
+    {
+      "id": "firewall.ip6.allow.0",
+      "name": "Permissão de entrada versus whitelist",
+      "status": "fail",
+      "severity": "high",
+      "description": "Regra permite tráfego além da whitelist, mesmo que não haja listener agora.",
+      "recommendation": "Restrinja protocolo, porta e destino ao necessário.",
+      "evidence": {
+        "family": "ip6",
+        "rule_index": 0
+      },
+      "reason": null
+    }
+  ],
+  "example": true
+}

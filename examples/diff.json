@@ -1,0 +1,485 @@
+{
+  "schema_version": "1.0",
+  "kind": "diff",
+  "summary": {
+    "new_fail": 0,
+    "resolved_fail": 1,
+    "new_warning": 0,
+    "resolved_warning": 0,
+    "unchanged": 27,
+    "changed": 0,
+    "added_pass": 0,
+    "added": 0,
+    "removed": 0
+  },
+  "package_metrics": {
+    "total_installed": {
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    "selected": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "examined": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "cryptographically_verified": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "valid_signatures": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "invalid_signatures": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "trusted_valid_signatures": {
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    "not_verified": {
+      "before": null,
+      "after": null,
+      "delta": null
+    },
+    "coverage_percent": {
+      "before": null,
+      "after": null,
+      "delta": null
+    }
+  },
+  "metrics": {
+    "score": {
+      "before": 82.14,
+      "after": 91.07,
+      "delta": 8.93
+    },
+    "coverage_percent": {
+      "before": 85.71,
+      "after": 85.71,
+      "delta": 0.0
+    },
+    "weighted_coverage_percent": {
+      "before": 87.5,
+      "after": 87.5,
+      "delta": 0.0
+    },
+    "domain_balanced_score": {
+      "before": 71.8,
+      "after": 88.46,
+      "delta": 16.66
+    }
+  },
+  "comparability_warnings": [],
+  "limitations": "Removido significa ausente do relatório, não recurso corrigido. Política/inventário podem mudar sem identificação nos relatórios legados. Nenhum conteúdo de evidência é reproduzido.",
+  "changes": [
+    {
+      "id": "accounts.password.nvg",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "fail",
+        "severity": "high"
+      },
+      "after": {
+        "status": "fail",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "accounts.password.root",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "accounts.password_strength",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "warning",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "warning",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "accounts.shell.nvg",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "accounts.shell.root",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "accounts.uid0.root",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "critical"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "critical"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.fs.protected_hardlinks",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.fs.protected_symlinks",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.fs.suid_dumpable",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.kernel.dmesg_restrict",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.kernel.kptr_restrict",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.kernel.randomize_va_space",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.kernel.yama.ptrace_scope",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "kernel.net.ipv4.conf.all.accept_redirects",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "network.tcp.0.0.0.0.8332",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "fail",
+        "severity": "high"
+      },
+      "after": {
+        "status": "fail",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "network.tcp.127.0.0.1.9050",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "permissions.nostr_demo",
+      "presence": "both",
+      "transition": "resolved_fail",
+      "before": {
+        "status": "fail",
+        "severity": "critical"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "critical"
+      },
+      "changed_fields": [
+        "description",
+        "recommendation",
+        "evidence"
+      ]
+    },
+    {
+      "id": "services.scope",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "warning",
+        "severity": "medium"
+      },
+      "after": {
+        "status": "warning",
+        "severity": "medium"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "services.tor.service",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.controlport",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.dns_assurance",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "warning",
+        "severity": "high"
+      },
+      "after": {
+        "status": "warning",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.dns_resolvers",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.dnsport",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.runtime_config",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "warning",
+        "severity": "high"
+      },
+      "after": {
+        "status": "warning",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.safe_socks",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.service",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.socksport",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    },
+    {
+      "id": "tor.transport",
+      "presence": "both",
+      "transition": "unchanged",
+      "before": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "after": {
+        "status": "pass",
+        "severity": "high"
+      },
+      "changed_fields": []
+    }
+  ],
+  "example": true
+}

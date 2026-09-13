@@ -1,0 +1,2702 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-09-13T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "package_integrity_checks"
+  ],
+  "scope": "Dados sintéticos de demonstração; nenhum segredo do usuário.",
+  "summary": {
+    "counts": {
+      "pass": 4,
+      "fail": 0,
+      "warning": 258
+    },
+    "total": 262,
+    "score": 100.0,
+    "coverage_percent": 1.53,
+    "weighted_coverage_percent": 2.53,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído",
+    "domains": {
+      "package_integrity": {
+        "counts": {
+          "pass": 4,
+          "fail": 0,
+          "warning": 258
+        },
+        "total": 262,
+        "score": 100.0,
+        "coverage_percent": 1.53,
+        "weighted_coverage_percent": 2.53,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      }
+    },
+    "domain_balanced_score": 100.0,
+    "critical_failures": 0,
+    "package_coverage": {
+      "total_installed": 130,
+      "selected": 128,
+      "examined": 128,
+      "verification_attempts": 1,
+      "cryptographically_verified": 1,
+      "valid_signatures": 1,
+      "invalid_signatures": 0,
+      "trusted_valid_signatures": 1,
+      "inconclusive": 127,
+      "not_verified": 129,
+      "coverage_percent": 0.77,
+      "selection_limit": 128,
+      "scope": "artefatos no cache; não verifica bytes instalados"
+    }
+  },
+  "context": null,
+  "selection": {
+    "preset": "full",
+    "omitted": []
+  },
+  "results": [
+    {
+      "id": "package_integrity.policy.global",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.policy.local_file",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.policy.repo.core",
+      "name": "Política de assinatura pacman",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinaturas obrigatórias com TrustedOnly.",
+      "recommendation": "Revise SigLevel e LocalFileSigLevel, incluindo políticas dos repositórios NVG OS.",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "package_integrity.budget",
+      "name": "Limite de pacotes",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Inventário maior que max_packages; verificação criptográfica parcial."
+    },
+    {
+      "id": "package_integrity.foreign.pkg000",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg001",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg002",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg003",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg004",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg005",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg006",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg007",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg008",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg009",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg010",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg011",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg012",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg013",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg014",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg015",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg016",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg017",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg018",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg019",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg020",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg021",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg022",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg023",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg024",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg025",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg026",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg027",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg028",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg029",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg030",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg031",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg032",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg033",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg034",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg035",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg036",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg037",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg038",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg039",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg040",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg041",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg042",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg043",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg044",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg045",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg046",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg047",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg048",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg049",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg050",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg051",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg052",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg053",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg054",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg055",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg056",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg057",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg058",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg059",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg060",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg061",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg062",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg063",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg064",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg065",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg066",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg067",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg068",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg069",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg070",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg071",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg072",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg073",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg074",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg075",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg076",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg077",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg078",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg079",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg080",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg081",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg082",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg083",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg084",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg085",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg086",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg087",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg088",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg089",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg090",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg091",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg092",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg093",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg094",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg095",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg096",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg097",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg098",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg099",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg100",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg101",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg102",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg103",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg104",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg105",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg106",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg107",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg108",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg109",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg110",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg111",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg112",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg113",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg114",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg115",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg116",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg117",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg118",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg119",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg120",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg121",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg122",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg123",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg124",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg125",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg126",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg127",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.foreign.pkg128",
+      "name": "Pacote fora das bases configuradas",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Pacote não consta das bases locais de repositórios; isso não prova AUR, instalação via -U ou ausência de assinatura."
+    },
+    {
+      "id": "package_integrity.signature.bitcoin",
+      "name": "Assinatura do pacote e confiança",
+      "status": "pass",
+      "severity": "high",
+      "description": "Assinatura criptográfica válida e confiança suficiente no keyring local.",
+      "recommendation": "Use artefatos assinados por signatários confiáveis; revise o keyring local e sua atualização por procedimento separado.",
+      "evidence": {
+        "package": "bitcoin",
+        "version": "1.0-1",
+        "scope": "arquivo no cache; não é integridade dos arquivos instalados"
+      },
+      "reason": null
+    },
+    {
+      "id": "package_integrity.signature.pkg000",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg001",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg002",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg003",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg004",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg005",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg006",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg007",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg008",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg009",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg010",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg011",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg012",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg013",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg014",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg015",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg016",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg017",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg018",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg019",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg020",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg021",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg022",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg023",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg024",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg025",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg026",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg027",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg028",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg029",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg030",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg031",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg032",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg033",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg034",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg035",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg036",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg037",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg038",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg039",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg040",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg041",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg042",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg043",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg044",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg045",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg046",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg047",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg048",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg049",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg050",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg051",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg052",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg053",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg054",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg055",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg056",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg057",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg058",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg059",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg060",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg061",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg062",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg063",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg064",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg065",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg066",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg067",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg068",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg069",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg070",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg071",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg072",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg073",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg074",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg075",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg076",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg077",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg078",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg079",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg080",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg081",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg082",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg083",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg084",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg085",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg086",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg087",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg088",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg089",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg090",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg091",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg092",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg093",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg094",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg095",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg096",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg097",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg098",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg099",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg100",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg101",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg102",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg103",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg104",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg105",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg106",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg107",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg108",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg109",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg110",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg111",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg112",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg113",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg114",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg115",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg116",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg117",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg118",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg119",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg120",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg121",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg122",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg123",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg124",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg125",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.signature.pkg126",
+      "name": "Assinatura do pacote e confiança",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Arquivo da versão instalada ausente do cache; metadados não substituem verificação criptográfica"
+    },
+    {
+      "id": "package_integrity.scope",
+      "name": "Limites de integridade local",
+      "status": "warning",
+      "severity": "info",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Assinaturas do cache não comprovam os bytes atualmente instalados nem a procedência histórica. Bases/keyring podem estar desatualizados; sem consulta de revogação online. Confiança só é avaliada para signatários verificáveis."
+    }
+  ],
+  "example": true
+}

@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "defaults": {
+    "timeout_seconds": 5,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "network": {
+      "allowed_listeners": [
+        {
+          "protocol": "tcp",
+          "address": "127.0.0.1",
+          "port": 9050,
+          "comment": "SOCKS Tor local; ajustar ao serviço real"
+        },
+        {
+          "protocol": "tcp",
+          "address": "::1",
+          "port": 9050,
+          "comment": "SOCKS Tor local IPv6, se utilizado"
+        },
+        {
+          "protocol": "tcp",
+          "address": "127.0.0.1",
+          "port": 7777,
+          "comment": "Relay local documentado; não autoriza bind na LAN"
+        }
+      ]
+    },
+    "permissions": {
+      "sensitive_paths": [
+        {
+          "id": "shadow",
+          "path": "/etc/shadow",
+          "kind": "file",
+          "max_mode": "0600",
+          "uid": 0,
+          "required": true,
+          "allow_symlink": false,
+          "severity": "critical"
+        },
+        {
+          "id": "nostr_key",
+          "path": "~/.local/share/neovanguard/chave.ncryptsec",
+          "kind": "file",
+          "max_mode": "0600",
+          "uid": "target",
+          "required": true,
+          "allow_symlink": false,
+          "severity": "critical",
+          "feature": "nostr_identity"
+        },
+        {
+          "id": "nostr_admin_vault",
+          "path": "/var/lib/nvg-nostr",
+          "kind": "directory",
+          "max_mode": "0700",
+          "uid": 0,
+          "required": true,
+          "allow_symlink": false,
+          "severity": "high",
+          "feature": "nostr_identity"
+        },
+        {
+          "id": "bitcoin_wallet",
+          "path": "~/.bitcoin/wallets/default/wallet.dat",
+          "kind": "file",
+          "max_mode": "0600",
+          "uid": "target",
+          "required": false,
+          "allow_symlink": false,
+          "severity": "critical",
+          "feature": "bitcoin"
+        },
+        {
+          "id": "bitcoin_config",
+          "path": "~/.bitcoin/bitcoin.conf",
+          "kind": "file",
+          "max_mode": "0600",
+          "uid": "target",
+          "required": false,
+          "allow_symlink": false,
+          "severity": "high",
+          "feature": "bitcoin"
+        }
+      ]
+    },
+    "tor": {
+      "service": "tor.service",
+      "torrc": "/etc/tor/torrc",
+      "resolv_conf": "/etc/resolv.conf",
+      "allowed_nameservers": [
+        "127.0.0.1",
+        "127.0.0.53",
+        "::1"
+      ],
+      "require_safe_socks": true
+    },
+    "services": {
+      "allowed_root_services": [],
+      "require_non_root": [
+        "tor.service",
+        "bitcoind.service",
+        "nostr-relay.service"
+      ]
+    },
+    "kernel": {
+      "kernel.randomize_va_space": {
+        "accepted": [
+          2
+        ],
+        "severity": "high",
+        "why": "ASLR dificulta prever endereços de memória; valor 2 inclui randomização do heap onde suportado.",
+        "recommendation": "Avalie compatibilidade e persista kernel.randomize_va_space=2 em /etc/sysctl.d/; confirme o valor efetivo após aplicar a política."
+      },
+      "kernel.dmesg_restrict": {
+        "accepted": [
+          1
+        ],
+        "severity": "medium",
+        "why": "Restringir logs do kernel reduz divulgação de endereços e detalhes internos a usuários sem privilégio.",
+        "recommendation": "Configure kernel.dmesg_restrict=1 na política sysctl do sistema."
+      },
+      "kernel.kptr_restrict": {
+        "accepted": [
+          2
+        ],
+        "severity": "medium",
+        "why": "Restringe a exposição de ponteiros do kernel nas interfaces que respeitam esta opção.",
+        "recommendation": "Avalie o impacto em diagnóstico e configure kernel.kptr_restrict=2."
+      },
+      "kernel.yama.ptrace_scope": {
+        "accepted": [
+          2
+        ],
+        "severity": "medium",
+        "why": "Restrições de ptrace reduzem a inspeção de memória de outros processos; valores maiores têm custos diferentes para depuração.",
+        "recommendation": "Escolha um nível compatível com o uso do NVG OS. O nível 3 não pode ser relaxado sem reiniciar."
+      },
+      "fs.protected_hardlinks": {
+        "accepted": [
+          1
+        ],
+        "severity": "medium",
+        "why": "Restringe hardlinks para arquivos de outros usuários e reduz ataques por links em diretórios compartilhados.",
+        "recommendation": "Configure fs.protected_hardlinks=1."
+      },
+      "fs.protected_symlinks": {
+        "accepted": [
+          1
+        ],
+        "severity": "medium",
+        "why": "Restringe o seguimento de symlinks em diretórios sticky graváveis por todos, mitigando substituição de arquivos.",
+        "recommendation": "Configure fs.protected_symlinks=1."
+      },
+      "fs.suid_dumpable": {
+        "accepted": [
+          0
+        ],
+        "severity": "medium",
+        "why": "Desabilitar dumps convencionais de processos privilegiados reduz exposição de memória sensível.",
+        "recommendation": "Configure fs.suid_dumpable=0 ou documente uma política alternativa de core dumps protegidos."
+      },
+      "net.ipv4.conf.all.accept_redirects": {
+        "accepted": [
+          0
+        ],
+        "severity": "medium",
+        "why": "Desabilitar redirects reduz mudanças de rota induzidas por mensagens ICMP; interfaces individuais também precisam de revisão.",
+        "recommendation": "Configure accept_redirects=0 para all, default e interfaces aplicáveis após avaliar a topologia."
+      },
+      "kernel.unprivileged_bpf_disabled": {
+        "accepted": [
+          1
+        ],
+        "severity": "high",
+        "why": "Corresponde à política de redução de exposição de memória do nOS.",
+        "recommendation": "Revise a configuração sysctl distribuída e confirme o valor em execução."
+      },
+      "kernel.perf_event_paranoid": {
+        "accepted": [
+          3
+        ],
+        "severity": "high",
+        "why": "Corresponde à política de redução de exposição de memória do nOS.",
+        "recommendation": "Revise a configuração sysctl distribuída e confirme o valor em execução."
+      },
+      "kernel.core_pattern": {
+        "accepted": [
+          "|/bin/false"
+        ],
+        "severity": "high",
+        "why": "Corresponde à política de redução de exposição de memória do nOS.",
+        "recommendation": "Revise a configuração sysctl distribuída e confirme o valor em execução."
+      }
+    },
+    "accounts": {
+      "passwd_path": "/etc/passwd",
+      "shadow_path": "/etc/shadow",
+      "allowed_uid0": [
+        "root"
+      ],
+      "allowed_interactive_users": [
+        "root"
+      ],
+      "non_login_shells": [
+        "/usr/bin/nologin",
+        "/sbin/nologin",
+        "/usr/sbin/nologin",
+        "/bin/false",
+        "/usr/bin/false"
+      ],
+      "legacy_hash_prefixes": [
+        "$1$",
+        "$5$"
+      ]
+    },
+    "firewall": {
+      "enabled": true,
+      "require_default_deny": true,
+      "require_ipv6": true,
+      "accept_justifications": {},
+      "backend": "nos"
+    },
+    "package_integrity": {
+      "enabled": true,
+      "pacman_conf": "/etc/pacman.conf",
+      "db_path": "/var/lib/pacman",
+      "keyring_dir": "/etc/pacman.d/gnupg",
+      "cache_dirs": [
+        "/var/cache/pacman/pkg"
+      ],
+      "max_packages": 128,
+      "priority_packages": [
+        "neovanguard-base",
+        "neovanguard-sovereignty",
+        "neovanguard-installer",
+        "nvg-nostr",
+        "tor",
+        "nftables",
+        "pacman",
+        "archlinux-keyring"
+      ]
+    },
+    "key_exposure": {
+      "enabled": false,
+      "home_dir": null,
+      "paths": [
+        {
+          "id": "bash_history",
+          "path": "~/.bash_history"
+        },
+        {
+          "id": "zsh_history",
+          "path": "~/.zsh_history"
+        }
+      ],
+      "max_file_bytes": 262144,
+      "max_total_bytes": 1048576,
+      "max_files": 8,
+      "max_seconds": 5,
+      "max_directory_entries": 128
+    },
+    "execution": {
+      "max_seconds": 120,
+      "max_output_bytes": 8388608,
+      "preset": "full"
+    },
+    "nos": {
+      "enabled": true,
+      "environment": "installed",
+      "expected_network_mode": "base",
+      "vault": false,
+      "target_user": null,
+      "policy_version": "nos-1.2.1-v1",
+      "features": {
+        "nostr_identity": false,
+        "nostr_relay": true,
+        "bitcoin": false
+      },
+      "network_library": "/usr/lib/neovanguard/neo-rede.sh",
+      "network_reference": "/usr/lib/neovanguard/network-policies.json",
+      "tor_uid": 43,
+      "vpn_interface": "wg0",
+      "vpn_endpoints": [],
+      "agent_unit": "nvg-nostr-agent.service",
+      "agent_socket": null,
+      "mounts": {
+        "/tmp": [
+          "nosuid",
+          "nodev",
+          "noexec"
+        ],
+        "/var/tmp": [
+          "nosuid",
+          "nodev",
+          "noexec"
+        ],
+        "/var/log": [
+          "nosuid",
+          "nodev",
+          "noexec"
+        ],
+        "/dev/shm": [
+          "nosuid",
+          "nodev",
+          "noexec"
+        ]
+      },
+      "journald": {
+        "Storage": "volatile",
+        "RuntimeMaxUse": "128M",
+        "RuntimeKeepFree": "256M",
+        "MaxLevelStore": "notice",
+        "ForwardToSyslog": "no"
+      },
+      "live_artifacts": [
+        "/etc/mkinitcpio.conf.d/archiso.conf"
+      ],
+      "live_services": [
+        "archiso-pacman-init.service",
+        "choose-mirror.service"
+      ],
+      "release_packages": [
+        "neovanguard-base",
+        "neovanguard-sovereignty",
+        "neovanguard-installer"
+      ]
+    }
+  },
+  "profiles": {
+    "installed": {},
+    "live": {
+      "nos": {
+        "environment": "live",
+        "target_user": "liveuser"
+      },
+      "accounts": {
+        "allowed_interactive_users": [
+          "root",
+          "liveuser"
+        ]
+      }
+    },
+    "install-media": {
+      "nos": {
+        "environment": "install_media",
+        "features": {
+          "nostr_identity": false,
+          "nostr_relay": false,
+          "bitcoin": false
+        }
+      }
+    },
+    "tor": {
+      "nos": {
+        "expected_network_mode": "tor"
+      },
+      "network": {
+        "allowed_listeners": [
+          {
+            "protocol": "tcp",
+            "address": "127.0.0.1",
+            "port": 9050,
+            "comment": "SOCKS Tor local; ajustar ao serviço real"
+          },
+          {
+            "protocol": "tcp",
+            "address": "::1",
+            "port": 9050,
+            "comment": "SOCKS Tor local IPv6, se utilizado"
+          },
+          {
+            "protocol": "tcp",
+            "address": "127.0.0.1",
+            "port": 7777,
+            "comment": "Relay local documentado; não autoriza bind na LAN"
+          },
+          {
+            "protocol": "tcp",
+            "address": "127.0.0.1",
+            "port": 9040
+          },
+          {
+            "protocol": "udp",
+            "address": "127.0.0.1",
+            "port": 9053
+          }
+        ]
+      }
+    },
+    "vault-live": {
+      "nos": {
+        "environment": "live",
+        "vault": true,
+        "expected_network_mode": "airgap",
+        "target_user": "liveuser",
+        "features": {
+          "nostr_identity": false,
+          "nostr_relay": false,
+          "bitcoin": false
+        }
+      },
+      "accounts": {
+        "allowed_interactive_users": [
+          "root",
+          "liveuser"
+        ]
+      },
+      "network": {
+        "allowed_listeners": []
+      }
+    },
+    "vault-installed": {
+      "nos": {
+        "vault": true,
+        "expected_network_mode": "airgap",
+        "features": {
+          "nostr_identity": false,
+          "nostr_relay": false,
+          "bitcoin": false
+        }
+      },
+      "network": {
+        "allowed_listeners": []
+      }
+    }
+  }
+}

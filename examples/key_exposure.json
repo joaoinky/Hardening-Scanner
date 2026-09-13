@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-09-13T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "key_exposure_checks"
+  ],
+  "scope": "Dados sintéticos de demonstração; nenhum segredo do usuário.",
+  "summary": {
+    "counts": {
+      "pass": 0,
+      "fail": 1,
+      "warning": 0
+    },
+    "total": 1,
+    "score": 0.0,
+    "coverage_percent": 100.0,
+    "weighted_coverage_percent": 100.0,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído",
+    "domains": {
+      "key_exposure": {
+        "counts": {
+          "pass": 0,
+          "fail": 1,
+          "warning": 0
+        },
+        "total": 1,
+        "score": 0.0,
+        "coverage_percent": 100.0,
+        "weighted_coverage_percent": 100.0,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      }
+    },
+    "domain_balanced_score": 0.0,
+    "critical_failures": 1,
+    "package_coverage": {
+      "total_installed": null,
+      "selected": 0,
+      "examined": 0,
+      "verification_attempts": 0,
+      "cryptographically_verified": 0,
+      "valid_signatures": 0,
+      "invalid_signatures": 0,
+      "trusted_valid_signatures": 0,
+      "inconclusive": 0,
+      "not_verified": null,
+      "coverage_percent": null,
+      "state": "não executado"
+    }
+  },
+  "context": null,
+  "selection": {
+    "preset": "full",
+    "omitted": []
+  },
+  "results": [
+    {
+      "id": "key_exposure.history.file./home/nvg/.bash_history",
+      "name": "Material de chave em texto plano",
+      "status": "fail",
+      "severity": "critical",
+      "description": "Padrão de chave/mnemônico validado ou credencial bunker reconhecida no arquivo; não comprova uso, autorização ou saldo.",
+      "recommendation": "Revise a exposição local em ambiente confiável e a necessidade de substituir a chave/carteira; o scanner não remove dados nem movimenta fundos.",
+      "evidence": {
+        "path": "/home/nvg/.bash_history",
+        "occurrences": {
+          "nsec": 1,
+          "wif": 1,
+          "bip39": 1
+        }
+      },
+      "reason": null
+    }
+  ],
+  "example": true
+}

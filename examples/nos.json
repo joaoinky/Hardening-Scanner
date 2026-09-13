@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-09-13T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "firewall_checks",
+    "storage_checks"
+  ],
+  "scope": "Dados sintéticos de demonstração; nenhum segredo do usuário.",
+  "summary": {
+    "counts": {
+      "pass": 1,
+      "fail": 0,
+      "warning": 3
+    },
+    "total": 4,
+    "score": 100.0,
+    "coverage_percent": 25.0,
+    "weighted_coverage_percent": 43.48,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído",
+    "domains": {
+      "firewall": {
+        "counts": {
+          "pass": 1,
+          "fail": 0,
+          "warning": 0
+        },
+        "total": 1,
+        "score": 100.0,
+        "coverage_percent": 100.0,
+        "weighted_coverage_percent": 100.0,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      },
+      "storage": {
+        "counts": {
+          "pass": 0,
+          "fail": 0,
+          "warning": 3
+        },
+        "total": 3,
+        "score": null,
+        "coverage_percent": 0.0,
+        "weighted_coverage_percent": 0.0,
+        "weights": {
+          "critical": 10,
+          "high": 5,
+          "medium": 3,
+          "low": 1,
+          "info": 1
+        },
+        "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+      }
+    },
+    "domain_balanced_score": 100.0,
+    "critical_failures": 0,
+    "package_coverage": {
+      "total_installed": null,
+      "selected": 0,
+      "examined": 0,
+      "verification_attempts": 0,
+      "cryptographically_verified": 0,
+      "valid_signatures": 0,
+      "invalid_signatures": 0,
+      "trusted_valid_signatures": 0,
+      "inconclusive": 0,
+      "not_verified": null,
+      "coverage_percent": null,
+      "state": "não executado"
+    }
+  },
+  "context": {
+    "environment": "installed",
+    "expected_network_mode": "base",
+    "vault": false,
+    "policy_version": "nos-1.2.1-v1",
+    "features": {
+      "nostr_identity": false,
+      "nostr_relay": true,
+      "bitcoin": false
+    },
+    "os_release": null,
+    "release_packages": {
+      "neovanguard-base": null,
+      "neovanguard-sovereignty": null,
+      "neovanguard-installer": null
+    }
+  },
+  "selection": {
+    "preset": "full",
+    "omitted": []
+  },
+  "results": [
+    {
+      "id": "firewall.nos_mode",
+      "name": "Conformidade com o modo de rede solicitado",
+      "status": "pass",
+      "severity": "critical",
+      "description": "Observação nova confrontada com a política solicitada e as referências locais do nOS.",
+      "recommendation": "Revise o modo esperado, as referências distribuídas e o estado do kernel; consulta não comprova anonimato ou isolamento físico.",
+      "evidence": {
+        "state": "verified",
+        "expected_mode": "base",
+        "observed_at": "2026-09-13T03:38:56.059222+00:00",
+        "reference_sha256": "c204bef1f593c8f5d3ba2dd65897b4828d6e767855f1f975820fbd34c23489d2",
+        "reasons": [
+          "nft: permissão insuficiente"
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "storage.mounts",
+      "name": "Montagens efetivas",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Comando não disponível na fixture"
+    },
+    {
+      "id": "storage.swap",
+      "name": "Persistência do swap",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Inventário de swap indisponível ou inválido."
+    },
+    {
+      "id": "storage.journal",
+      "name": "Política journald",
+      "status": "warning",
+      "severity": "medium",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise a evidência e execute novamente com os pré-requisitos disponíveis.",
+      "evidence": {},
+      "reason": "Configuração composta indisponível ou construção não interpretada."
+    }
+  ],
+  "example": true
+}

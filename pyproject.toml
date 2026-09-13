@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvg-hardening-scanner"
+version = "0.3.0"
+description = "Auditoria passiva e modular de hardening para NVG OS / Arch Linux"
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[project.scripts]
+nvg-scan = "nvg_scanner.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nvg_scanner = ["data/*.txt"]

@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.0",
+  "scanner": {
+    "name": "nvg-hardening-scanner",
+    "version": "0.1.0"
+  },
+  "generated_at": "2026-09-12T12:00:00+00:00",
+  "profile": "installed",
+  "modules": [
+    "account_checks",
+    "kernel_checks",
+    "network_checks",
+    "permissions_checks",
+    "service_checks",
+    "tor_checks"
+  ],
+  "scope": "Host sintético para demonstração dos seis módulos; todos os dados são fictícios.",
+  "summary": {
+    "counts": {
+      "pass": 21,
+      "fail": 3,
+      "warning": 4
+    },
+    "total": 28,
+    "score": 82.14,
+    "coverage_percent": 85.71,
+    "weighted_coverage_percent": 87.5,
+    "weights": {
+      "critical": 10,
+      "high": 5,
+      "medium": 3,
+      "low": 1,
+      "info": 1
+    },
+    "method": "100 * peso(pass) / peso(pass + fail); warning excluído"
+  },
+  "results": [
+    {
+      "id": "accounts.shell.nvg",
+      "name": "Shell interativo",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Shell autorizado pela política.",
+      "recommendation": "Revise o uso da conta; serviços que não precisam de login podem usar nologin.",
+      "evidence": {
+        "user": "nvg",
+        "uid": 1000,
+        "shell": "/bin/bash"
+      },
+      "reason": null
+    },
+    {
+      "id": "accounts.uid0.root",
+      "name": "Conta com UID 0",
+      "status": "pass",
+      "severity": "critical",
+      "description": "Conta UID 0 autorizada.",
+      "recommendation": "Mantenha apenas contas UID 0 explicitamente necessárias.",
+      "evidence": {
+        "user": "root",
+        "uid": 0,
+        "shell": "/bin/bash"
+      },
+      "reason": null
+    },
+    {
+      "id": "accounts.shell.root",
+      "name": "Shell interativo",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Shell autorizado pela política.",
+      "recommendation": "Revise o uso da conta; serviços que não precisam de login podem usar nologin.",
+      "evidence": {
+        "user": "root",
+        "uid": 0,
+        "shell": "/bin/bash"
+      },
+      "reason": null
+    },
+    {
+      "id": "accounts.password.nvg",
+      "name": "Credencial de nvg",
+      "status": "fail",
+      "severity": "high",
+      "description": "Campo de senha vazio; acesso sem senha depende do PAM.",
+      "recommendation": "Bloqueie senhas desnecessárias ou redefina a credencial conforme a política de autenticação do sistema.",
+      "evidence": {
+        "user": "nvg"
+      },
+      "reason": null
+    },
+    {
+      "id": "accounts.password.root",
+      "name": "Credencial de root",
+      "status": "pass",
+      "severity": "high",
+      "description": "Autenticação por senha bloqueada; outros métodos de login não foram avaliados.",
+      "recommendation": "Bloqueie senhas desnecessárias ou redefina a credencial conforme a política de autenticação do sistema.",
+      "evidence": {
+        "user": "root"
+      },
+      "reason": null
+    },
+    {
+      "id": "accounts.password_strength",
+      "name": "Força das senhas e políticas de autenticação",
+      "status": "warning",
+      "severity": "medium",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise separadamente políticas de novas senhas, MFA quando aplicável e métodos de autenticação permitidos.",
+      "evidence": {},
+      "reason": "Força de senhas existentes não é inferível de hashes. PAM, SSH, expiração e identidades NSS/LDAP não são avaliados nesta versão."
+    },
+    {
+      "id": "kernel.fs.protected_hardlinks",
+      "name": "fs.protected_hardlinks",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Restringe hardlinks para arquivos de outros usuários e reduz ataques por links em diretórios compartilhados.",
+      "recommendation": "Configure fs.protected_hardlinks=1.",
+      "evidence": {
+        "actual": 1,
+        "accepted": [
+          1
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.fs.protected_symlinks",
+      "name": "fs.protected_symlinks",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Restringe o seguimento de symlinks em diretórios sticky graváveis por todos, mitigando substituição de arquivos.",
+      "recommendation": "Configure fs.protected_symlinks=1.",
+      "evidence": {
+        "actual": 1,
+        "accepted": [
+          1
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.fs.suid_dumpable",
+      "name": "fs.suid_dumpable",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Desabilitar dumps convencionais de processos privilegiados reduz exposição de memória sensível.",
+      "recommendation": "Configure fs.suid_dumpable=0 ou documente uma política alternativa de core dumps protegidos.",
+      "evidence": {
+        "actual": 0,
+        "accepted": [
+          0
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.kernel.dmesg_restrict",
+      "name": "kernel.dmesg_restrict",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Restringir logs do kernel reduz divulgação de endereços e detalhes internos a usuários sem privilégio.",
+      "recommendation": "Configure kernel.dmesg_restrict=1 na política sysctl do sistema.",
+      "evidence": {
+        "actual": 1,
+        "accepted": [
+          1
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.kernel.kptr_restrict",
+      "name": "kernel.kptr_restrict",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Restringe a exposição de ponteiros do kernel nas interfaces que respeitam esta opção.",
+      "recommendation": "Avalie o impacto em diagnóstico e configure kernel.kptr_restrict=2.",
+      "evidence": {
+        "actual": 2,
+        "accepted": [
+          2
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.kernel.randomize_va_space",
+      "name": "kernel.randomize_va_space",
+      "status": "pass",
+      "severity": "high",
+      "description": "Valor efetivo atende à política. ASLR dificulta prever endereços de memória; valor 2 inclui randomização do heap onde suportado.",
+      "recommendation": "Avalie compatibilidade e persista kernel.randomize_va_space=2 em /etc/sysctl.d/; confirme o valor efetivo após aplicar a política.",
+      "evidence": {
+        "actual": 2,
+        "accepted": [
+          2
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.kernel.yama.ptrace_scope",
+      "name": "kernel.yama.ptrace_scope",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Restrições de ptrace reduzem a inspeção de memória de outros processos; valores maiores têm custos diferentes para depuração.",
+      "recommendation": "Escolha um nível compatível com o uso do NVG OS. O nível 3 não pode ser relaxado sem reiniciar.",
+      "evidence": {
+        "actual": 1,
+        "accepted": [
+          1,
+          2,
+          3
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "kernel.net.ipv4.conf.all.accept_redirects",
+      "name": "net.ipv4.conf.all.accept_redirects",
+      "status": "pass",
+      "severity": "medium",
+      "description": "Valor efetivo atende à política. Desabilitar redirects reduz mudanças de rota induzidas por mensagens ICMP; interfaces individuais também precisam de revisão.",
+      "recommendation": "Configure accept_redirects=0 para all, default e interfaces aplicáveis após avaliar a topologia.",
+      "evidence": {
+        "actual": 0,
+        "accepted": [
+          0
+        ]
+      },
+      "reason": null
+    },
+    {
+      "id": "network.tcp.0.0.0.0.8332",
+      "name": "Socket autorizado pela whitelist",
+      "status": "fail",
+      "severity": "high",
+      "description": "Escuta ausente da whitelist; exposição externa depende também de rotas e firewall.",
+      "recommendation": "Identifique o serviço; restrinja seu bind/desative a escuta ou autorize explicitamente se necessária.",
+      "evidence": {
+        "protocol": "tcp",
+        "address": "0.0.0.0",
+        "port": 8332
+      },
+      "reason": null
+    },
+    {
+      "id": "network.tcp.127.0.0.1.9050",
+      "name": "Socket autorizado pela whitelist",
+      "status": "pass",
+      "severity": "high",
+      "description": "Escuta prevista na política.",
+      "recommendation": "Mantenha a regra restrita ao endereço necessário.",
+      "evidence": {
+        "protocol": "tcp",
+        "address": "127.0.0.1",
+        "port": 9050
+      },
+      "reason": null
+    },
+    {
+      "id": "permissions.nostr_demo",
+      "name": "Proteção de caminho sensível",
+      "status": "fail",
+      "severity": "critical",
+      "description": "Bits de permissão excedem a máscara permitida.",
+      "recommendation": "Revise proprietário, máscara de permissões e diretórios ancestrais; mantenha chaves acessíveis somente ao usuário necessário.",
+      "evidence": {
+        "path": "/vault/nostr.key",
+        "expected_uid": 1000,
+        "max_mode": "0600",
+        "mode": "0644",
+        "uid": 1000,
+        "gid": 1000
+      },
+      "reason": null
+    },
+    {
+      "id": "services.tor.service",
+      "name": "Privilégios de tor.service",
+      "status": "pass",
+      "severity": "high",
+      "description": "Processo principal sem UID root.",
+      "recommendation": "Mantenha o menor privilégio necessário e revise exceções root periodicamente.",
+      "evidence": {
+        "unit": "tor.service",
+        "main_pid": 123,
+        "effective_uid": 974
+      },
+      "reason": null
+    },
+    {
+      "id": "services.scope",
+      "name": "Cobertura dos processos de serviço",
+      "status": "warning",
+      "severity": "medium",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Complemente a revisão com processos filhos/cgroups e serviços iniciados fora do systemd.",
+      "evidence": {},
+      "reason": "Somente MainPID de unidades systemd running no gerenciador do sistema; filhos, serviços de usuário, contêineres e daemons externos não são enumerados."
+    },
+    {
+      "id": "tor.service",
+      "name": "Serviço Tor ativo",
+      "status": "pass",
+      "severity": "high",
+      "description": "Unidade ativa com processo principal.",
+      "recommendation": "Confirme a unidade Tor usada pelo NVG OS e examine seu estado e logs locais.",
+      "evidence": {
+        "unit": "tor.service",
+        "load_state": "loaded",
+        "active_state": "active"
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.socksport",
+      "name": "Bind de socksport",
+      "status": "pass",
+      "severity": "high",
+      "description": "Endpoints declarados restritos a loopback ou desativados.",
+      "recommendation": "Restrinja endpoints de cliente/controle ao loopback; este perfil é para um host cliente NVG OS.",
+      "evidence": {
+        "endpoints": [
+          {
+            "address": "127.0.0.1",
+            "port": 9050,
+            "loopback": true
+          }
+        ],
+        "source": "torrc declarado; não é configuração efetiva do processo"
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.dnsport",
+      "name": "Bind de dnsport",
+      "status": "pass",
+      "severity": "high",
+      "description": "Endpoints declarados restritos a loopback ou desativados.",
+      "recommendation": "Restrinja endpoints de cliente/controle ao loopback; este perfil é para um host cliente NVG OS.",
+      "evidence": {
+        "endpoints": [],
+        "source": "torrc declarado; não é configuração efetiva do processo"
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.transport",
+      "name": "Bind de transport",
+      "status": "pass",
+      "severity": "high",
+      "description": "Endpoints declarados restritos a loopback ou desativados.",
+      "recommendation": "Restrinja endpoints de cliente/controle ao loopback; este perfil é para um host cliente NVG OS.",
+      "evidence": {
+        "endpoints": [],
+        "source": "torrc declarado; não é configuração efetiva do processo"
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.controlport",
+      "name": "Bind de controlport",
+      "status": "pass",
+      "severity": "high",
+      "description": "Endpoints declarados restritos a loopback ou desativados.",
+      "recommendation": "Restrinja endpoints de cliente/controle ao loopback; este perfil é para um host cliente NVG OS.",
+      "evidence": {
+        "endpoints": [],
+        "source": "torrc declarado; não é configuração efetiva do processo"
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.safe_socks",
+      "name": "Proteção contra resolução DNS prévia via SOCKS",
+      "status": "pass",
+      "severity": "high",
+      "description": "SafeSocks habilitado no arquivo.",
+      "recommendation": "Defina SafeSocks 1 e configure clientes para enviar nomes ao proxy (por exemplo, socks5h).",
+      "evidence": {},
+      "reason": null
+    },
+    {
+      "id": "tor.dns_resolvers",
+      "name": "Resolvedores DNS declarados",
+      "status": "pass",
+      "severity": "high",
+      "description": "Endereços nameserver correspondem à política configurada.",
+      "recommendation": "Verifique a cadeia do resolvedor local, o uso de DNS pelo proxy e as regras de saída IPv4/IPv6.",
+      "evidence": {
+        "nameservers": [
+          "127.0.0.1"
+        ],
+        "unexpected_nameservers": []
+      },
+      "reason": null
+    },
+    {
+      "id": "tor.dns_assurance",
+      "name": "Ausência de vazamento DNS",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Revise o encaminhamento do resolvedor e a política de saída; configure aplicações para resolução pelo proxy. DNSPort sozinho não força o tráfego a passar pelo Tor.",
+      "evidence": {},
+      "reason": "Não comprovável por estes checks passivos: upstream do stub, firewall, DNS de aplicativos e IPv6 não foram validados de ponta a ponta."
+    },
+    {
+      "id": "tor.runtime_config",
+      "name": "Correspondência com o Tor em execução",
+      "status": "warning",
+      "severity": "high",
+      "description": "Verificação inconclusiva ou dependente de revisão contextual.",
+      "recommendation": "Confirme os arquivos e argumentos da unidade e a configuração efetiva do Tor antes de interpretar os resultados como estado em execução.",
+      "evidence": {},
+      "reason": "Auditoria do torrc selecionado; defaults-torrc, opções de linha de comando, configuração não recarregada e bootstrap não são verificados."
+    }
+  ],
+  "example": true
+}
